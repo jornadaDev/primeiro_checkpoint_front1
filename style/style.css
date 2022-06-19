@@ -1,0 +1,461 @@
+/* aqui farei um reset */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* aqui importei uma fonte do google fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Lobster&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* aqui crio variáveis de cores  */
+
+:root {
+  --primary-color:radial-gradient(circle 248px at center, #16d9e3 0%, #30c7ec 47%, #46aef7 100%); 
+  --second-color: black;
+  --third-color: white;
+  --last-color: aqua;
+
+}
+
+/* aqui configuro o comportamento da pagina */
+
+html {
+  width: 100%;
+  height: auto; 
+  /*a cada 1 rem será considerado 10px*/
+  font-size: 62.5%;
+}
+
+
+/* aqui coloco uma imagem de fundo no corpo da pagina e ajusto a largura do body  */
+
+body{
+ 
+  width: 100vw;
+  background-image: url(../assets/nuvens.jpg);
+ 
+}
+
+/* aqui começa a estilização do header */
+
+.container_header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: var(--second-color);
+  background-image: url(../assets/2.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 100%;
+  -webkit-box-shadow: 0px 8px 10px 1px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 8px 10px 1px rgba(0,0,0,0.75);
+box-shadow: 0px 8px 10px 1px rgba(0,0,0,0.75);
+}
+  
+  
+  /* criei um subcontainer para agrupar os elementos que ficam do lado esquerdo do meu container_header(pai) */
+
+.container_header_filho_esquerdo{
+  padding-left: 5%;
+}
+ 
+/* essa div foi criada para ter um espaço , arredondá-lo e colocar uma imagem de fundo, criando assim minha logo */
+.logo {
+  width: 80px;
+  height: 75px;
+  border: 4px solid var(--third-color);
+  border-radius: 50%;
+  background-image: url(../assets/6.jpeg);
+  background-size: contain; 
+  background-position: center;
+}
+
+/* aqui crio um subcontainer para agrupar os elementos que ficarão do lado direito do meu container_header(pai) */
+
+
+.container_filho_direito {
+  padding-right: 5%;
+}
+
+/* aqui estilizo a minha lista , colocando uma ao lado da outra (display : flex) e removendo o estilo de lista que vem por padrão */
+
+.ul_flex {
+  display: flex;
+  list-style: none;
+  gap: 15px;
+}
+
+/* ainda dentro da lista, mas agora mexendo nas minhas ancoras, removo a decoracao de texto que vem por padrao, aplico cor aos links, e seleciono a fonte que importei do google fonts */
+
+.ul_flex a {
+  text-decoration: none;
+  color: var(--third-color);
+  font-family: 'Roboto', sans-serif;
+}
+
+/* aqui ainda dentro da lista, nas ancoras, mas agora estilizando , criando um efeito quando o usuario passar o mouse encima*/
+
+.ul_flex a:hover{
+  border-bottom: 5px solid var(--last-color);
+  background-color: var(--third-color);
+  color: var(--second-color);
+  border-radius: 3px;
+  transition: 1000ms;
+  padding: 3px;
+}
+
+/* aqui terminou a estilização de todo header */
+
+
+/* aqui começa a estilização  main, na section banner  */
+
+.banner {
+  background-image: url(../assets/teste4.jpg);
+  background-repeat: no-repeat;
+  background-size:cover;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100vw;
+  height: 380px;
+}
+
+/* aqui começo a estilizar o paragrafo filho do banner, para isso criei essa div , para poder manipular melhor o texto dentro do banner */
+.paragrafo_banner {
+  width: 25%;
+  height: 100%;
+  line-height: 30px;
+  font-weight: bold;
+  padding-right: 2.5%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-family: 'Lobster', cursive;
+  text-shadow: 2px 2px 8px var(--second-color); 
+}
+
+/* aqui é o título do parágrafo banner */
+
+h1 {
+  font-family: 'Roboto', sans-serif;
+  color: var(--third-color);
+  text-shadow: 2px 2px 8px var(--second-color); 
+}
+
+
+
+/* efeito para o titulo do paragrafo banner */
+
+h1:hover{
+font-size: 2.2rem;
+  transition: 2000ms;
+  border-bottom: 1px solid var(--third-color);
+  background-color: var(--second-color);
+}
+
+  /* estilização para o paragrafo banner*/
+
+  .paragrafo_banner p{
+    margin-top: 10px;
+    color: var(--third-color);
+    text-shadow: 2px 2px 8px var(--second-color); 
+  }
+
+
+ 
+/* aqui começo a estilizar a segunda seção do meu main,  a section curiosidades */
+
+
+.titulo_curiosidade  {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 5px;
+  background-color: var(--second-color);
+  color: var(--third-color);
+}
+ 
+/* aqui crio efeito para o titulo */
+
+.titulo_curiosidade:hover{
+    color: var(--third-color);
+    background-color: var(--second-color);
+    font-size: 2.2rem;
+    transition: 2000ms;
+  }
+  
+/* aqui criei uma div container_card para que dentro dela possa criar outras divs ,(que serão os cards) para assim poder manipular melhor suas posições  através do flex */
+
+  .container_card{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+    
+    /* aqui estilizo todos os card de forma geral */
+  
+  
+  .card {
+    
+    height: 20.9rem;
+    width: 20rem;
+    background-color: #17B6ED;
+    border-radius: 5px;
+    box-shadow: 10px 10px 8px #888888;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+  
+   
+   
+  }
+
+  /* aqui crio o efeito de todos os cards de forma geral */
+    
+  .card:hover{
+    transform: scale(1.1);
+   
+    
+  }
+
+  /* aqui crio um padrão para ser colocado as imagens nos cards de forma geral */
+  
+  .background-card{
+    height: 65%;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  /* aqui crio um padrao de para colocar os textos de forma geral nos cards */
+  
+  .texto-card {
+    height: 50%;
+    width: 100%;
+    
+  }
+  
+  /* aqui estilizo o titulo do texto dentro dos cards de forma geral */
+
+  .texto-card h3 {
+    color: var(--third-color);
+    text-shadow: 2px 2px 8px var(--second-color);
+    text-align: center; 
+    font-family: 'Roboto', sans-serif;
+  }
+
+  /* aqui estilizo os parágrafos dos textos de forma geral */
+  
+  .texto-card p {
+    color: var();
+    text-shadow: 2px 2px 8px var(--second-color); 
+    text-align: center ;
+    font-family: 'Roboto', sans-serif;
+    font-style: italic;
+  }
+  
+  /* aqui estilizo especificamente o primeiro card, colocando sua imagem, que é diferente dos outros cards */
+  
+  .card1 {
+    background-image: url(../assets/ceulimpo.jpg);
+    
+  }
+  
+  /* aqui estilizo especificamente o segundo card, colocando sua imagem, que é diferente dos outros cards */
+  
+  .card2 {
+    background-image: url(../assets/card2.jpg);
+   
+  }
+
+  /* aqui estilizo especificamente o terceiro card, colocando sua imagem, que é diferente dos outros cards */
+  
+  .card3{
+    background-image: url(../assets/card3.jpg);
+  }
+  
+  /* aqui começo a estilizar a seção do video */
+
+  /* estilizo o titulo  */
+
+
+.titulo_saiba {
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 5px;
+  color: var(--second-color);
+}
+  
+/* efeito do titulo */
+
+.titulo_saiba:hover{
+  
+  font-size: 2.2rem;
+  transition: 2000ms;
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* container do video */
+
+.video {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* aqui começo meu footer, definindo seu container */
+
+.container_footer{
+  height: 200px;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 60px;
+  color: var(--third-color);
+}
+  
+/* titulo do footer */
+  
+.titulo_contato{
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 5px;
+  
+  color: var(--second-color);
+}
+
+/* efeito do titulo do footer */
+
+.titulo_contato:hover{
+  font-size: 2.2rem;
+  transition: 2000ms;
+  font-weight: bold;
+  font-style: italic;
+  color: white; 
+  background-color: black;
+}
+
+/* icone importado do fontawesome */
+
+.fa-brands{
+  padding: 10px;
+  color: var(--second-color);
+}
+
+/* aqui começo a animação para meus icones */
+
+@keyframes icone{
+  to {
+    border-radius: 50%;
+    color: var(--third-color);
+    background-color: var(--second-color);
+    transform: rotate(360deg);
+  }
+}
+
+.fa-brands:hover{
+  animation-name: icone;
+  animation-duration: 1.5s;
+  animation-direction: alternate;
+  animation-timing-function: ease-in;
+   animation-fill-mode: forwards;
+  }
+    
+  /* aqui começo a responsividade  */
+  
+  @media (max-width: 950px )  { 
+   body {
+    width: 100vw;
+   }
+
+   .container_header_filho_esquerdo{
+    padding-left: 2.5%;
+  }
+
+  .container_filho_direito {
+    padding-right: 5%;
+  }
+
+   .banner {
+    width: 100vw;
+    height: 23rem;
+   }
+   
+  
+  .paragrafo_banner{
+    width: 95%;   
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+  
+  }
+  
+  .paragrafo_banner h1 {
+    display: flex;
+    align-self: flex-start;
+    
+    
+  }
+    .paragrafo_banner p {
+  font-size: 10px;
+  color: var(--third-color);
+  display: flex;
+  font-style: italic;
+  font-weight: bold;
+  
+  align-items: flex-end;
+  flex-direction: flex-end;
+   }
+  
+   .container_card{
+    display: flex;
+    flex-direction: column;
+   }
+  
+   .ul_flex {
+  flex-direction: column;
+  }
+}
+
+  
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+   
+   
+  
+  
+ 
+
+
+  
+
+ 
+
